@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script src="Jq/jquery-3.2.1.min.js"></script>
+	<title>JQuery test1</title>
+</head>
+<body>
+<div id="para">
+	<h3>This is h3 tag</h3>
+	<p>This is a paragraph</p>
+</div>
+
+<script>
+	$(document).ready(function(){
+/*  This means waiting to whole doument to load.
+	We can use multiple $(document).ready(function(){ }); if we want.
+	But that's useless*/
+
+	 $('#para').hide(1500).show(2000).slideUp(1000).delay(1200).slideDown(1000).delay(1000).css({color:'blue'});
+	 //slideUp & down works without fading.
+	//We can use both double quotes and single quotes.
+	});
+
+	/*$(function(){
+	This is the shortest way of doing the above.
+	})*/ 
+
+	//id is a #tag.
+</script>
+</body>
+</html>
