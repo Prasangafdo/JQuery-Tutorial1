@@ -1,0 +1,22 @@
+#panel1
+{
+	border-color: #0ff;
+	padding: 20px;
+	background-color: #0ee;
+	width: 180px
+	/*We use # for ids. "." for classes*/
+}
+#panel2
+{
+	padding: 2px;
+	background-color: #29fac4;
+	width: 200px;
+	text-decoration: none;
+	float: right;
+}
+
+#container
+{
+	display: inline-block;
+	
+}
