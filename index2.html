@@ -15,26 +15,29 @@
 	This is container1
 </div>
 
+<div id="container2">
+	This is container2
+</div>
+
+
 <div id="para2">
 	<h2>This is H2 </h2>
 	<!--#para moves up, because it's hiding.-->
-
+<button id="btn1">Show/hide container1</button>
+<button id="btn2">Hover me</button>
 </div>
 
 <script>
 	$(document).ready(function(){
-	/*  This means waiting to whole doument to load.
-		We can use multiple $(document).ready(function(){ }); if we want.
-		But that's useless*/
+	$('#container1').html('This is JQuery on container1 <br/><strong> This is strong text </strong>');
 
-		/*$(function(){
-	This is the shortest way of doing the above.
-	})*/ 
+	$('#btn1').on('click', function() {
+		$('#container1').slideToggle(300);
+	});
 
-	 $('#para').hide(1500).show(2000).slideUp(1000).delay(1200).slideDown(1000).delay(1000).css({color:'blue'});
-	 $('#para2').css({
-	 	opacity:'0.4'
-	 });
+	$('#btn2').on('mouseover', function() {
+		$('#container2').fadeToggle(500);
+	});
 	 //slideUp & down works without fading.
 	//We can use both double quotes and single quotes.
 	});
