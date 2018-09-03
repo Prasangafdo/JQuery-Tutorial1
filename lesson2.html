@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script src="Jq/jquery-3.2.1.min.js"></script>
+	<title>JQuery test1</title>
+</head>
+<body>
+<div id="para">
+	<h3>This is h3 tag</h3>
+	<p>This is a paragraph</p>
+</div>
+
+<div id="para2">
+	<h2>This is H2 </h2>
+	<!--#para moves up, because it's hiding.-->
+
+</div>
+
+<script>
+	$(document).ready(function(){
+		$('#para').slideUp(5000);
+		$('h2').addClass('text-primary').html('This text was included by <strong> Jquery </strong>');
+	});
+</script>
+</body>
+</html>
