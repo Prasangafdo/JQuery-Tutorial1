@@ -63,9 +63,22 @@
 		// $(this).next().remove();
 		//Different betweeen hide and remove is, hide will only hide the content, but it's still there. But remove will completely remove the element.
 
-		$(this).removeClass('text-primary');
-		$(this).siblings().addClass('text-primary');
-		$(this).closest('.container').addClass('img-thumbnail');//This will go all the way upto the mentioned attr and add the class.
+		// $(this).removeClass('text-primary');
+		// $(this).siblings().addClass('text-primary');
+		// $(this).closest('.container').addClass('img-thumbnail');//This will go all the way upto the mentioned attr and add the class.
+
+		//.find('.text-primary')
+		//filter('.text-primary')
+		if ($(this).is('.text-primary')) {
+			console.log('bootstrap');
+		}
+		// if ($(this).not('.text-primary')) {
+		// 	console.log('Not bootstrap');
+		// }
+
+		if ($(this).parent().is('ul')) {
+			alert('You clicked on a sub <li> and it is: ');//Check how to get html data later
+		}
 	});
 	});
 
