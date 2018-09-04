@@ -27,13 +27,48 @@
 </div>
 <script>
 	$(document).ready(function(){
-	$('.btn').on('click', function(){
-		var columnID = $(this).attr('data-panel');
-		//console.log(columnID);
-		$('#'+columnID).html('This is '+columnID);
+	// $('.btn').on('click', function(){
+	// 	var columnID = $(this).attr('data-panel');
+	// 	//console.log(columnID);
+	// 	$('#'+columnID).html('This is '+columnID);
+	// });
+
+	//$('li');
+	console.log($('li'));
+	console.log(
+		$('li').first()
+		);
+	console.log(
+		$('li').last()
+		);
+
+		console.log(
+		$('ul:first').children()
+		);
+
+		console.log(
+		$('li:first').siblings()//This will return elements excluding the current element
+		);
+
+		console.log(
+		$('li:first').parent()//This will return the parent element
+		);
+
+//	$('li').last().slideUp(1000);
+	$('li').eq(5).addClass('text-primary');
+
+	$('li').eq(1).parent().parent().next().next().addClass('text-danger'); 
+
+	$('li').on('click', function() {
+		// $(this).next().remove();
+		//Different betweeen hide and remove is, hide will only hide the content, but it's still there. But remove will completely remove the element.
+
+		$(this).removeClass('text-primary');
+		$(this).siblings().addClass('text-primary');
+		$(this).closest('.container').addClass('img-thumbnail');//This will go all the way upto the mentioned attr and add the class.
+	});
 	});
 
-	});
 
 	//id is a #tag.
 </script>
