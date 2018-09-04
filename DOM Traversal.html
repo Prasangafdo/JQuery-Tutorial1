@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="Jq/jquery-3.2.1.min.js"></script>
+	<title>JQuery test series</title>
+</head>
+<body>
+<div id="para">
+	<h3 class="text-primary">JQuery tutorial series</h3>
+	<p>This is all about DOM traversal in JQuery</p>
+</div>
+
+<div class="container">
+	<li>Car
+		<ul>
+			<li>Sedan</li>
+			<li>Station Wagon</li>
+			<li>Hatchback</li>
+			<li>Coupe</li>
+		</ul>
+	</li>
+	<li>Van</li>
+	<li>Bus</li>
+	<li>Motor Cycle</li>
+</div>
+<script>
+	$(document).ready(function(){
+	// $('.btn').on('click', function(){
+	// 	var columnID = $(this).attr('data-panel');
+	// 	//console.log(columnID);
+	// 	$('#'+columnID).html('This is '+columnID);
+	// });
+
+	//$('li');
+	console.log($('li'));
+	console.log(
+		$('li').first()
+		);
+	console.log(
+		$('li').last()
+		);
+
+		console.log(
+		$('ul:first').children()
+		);
+
+		console.log(
+		$('li:first').siblings()//This will return elements excluding the current element
+		);
+
+		console.log(
+		$('li:first').parent()//This will return the parent element
+		);
+
+//	$('li').last().slideUp(1000);
+	$('li').eq(5).addClass('text-primary');
+
+	$('li').eq(1).parent().parent().next().next().addClass('text-danger'); 
+
+	$('li').on('click', function() {
+		// $(this).next().remove();
+		//Different betweeen hide and remove is, hide will only hide the content, but it's still there. But remove will completely remove the element.
+
+		// $(this).removeClass('text-primary');
+		// $(this).siblings().addClass('text-primary');
+		// $(this).closest('.container').addClass('img-thumbnail');//This will go all the way upto the mentioned attr and add the class.
+
+		//.find('.text-primary')
+		//filter('.text-primary')
+		if ($(this).is('.text-primary')) {
+			console.log('bootstrap');
+		}
+		// if ($(this).not('.text-primary')) {
+		// 	console.log('Not bootstrap');
+		// }
+
+		if ($(this).parent().is('ul')) {
+			alert('You clicked on a sub <li> and it is: ');//Check how to get html data later
+		}
+	});
+	});
+
+
+	//id is a #tag.
+</script>
+</body>
+</html>

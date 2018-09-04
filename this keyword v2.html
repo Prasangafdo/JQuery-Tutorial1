@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="Jq/jquery-3.2.1.min.js"></script>
+	<title>JQuery test series</title>
+</head>
+<body>
+<div id="para">
+	<h3 class="text-primary">JQuery tutorial series</h3>
+	<p>This is a paragraph</p>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 img-thumbnail" id="panel1">
+			<p>This is column data</p>
+			<!-- <button data-panel="panel1" class="btn btn-primary">Click me</button> -->
+		</div>
+		<div class="col-md-4 img-thumbnail" id="panel2">
+			<p>This is column data</p>
+			<!-- <button data-panel="panel2" class="btn btn-primary">Click me</button> -->
+		</div>
+		<div class="col-md-4 img-thumbnail" id="panel3">
+			<p>This is column data</p>
+			<!-- <button data-panel="panel3" class="btn btn-primary">Click me</button> -->
+		</div>
+
+		<div class="col-md-4">
+			<button data-panel="panel1" class="btn btn-primary">Click me</button>
+		</div>
+		<div class="col-md-4">
+			<button data-panel="panel2" class="btn btn-primary">Click me</button>
+		</div>
+		<div class="col-md-4">
+			<button data-panel="panel3" class="btn btn-primary">Click me</button>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+	$('.btn').on('click', function(){
+		var columnID = $(this).attr('data-panel');
+		//console.log(columnID);
+		$('#'+columnID).html('This is '+columnID);
+	});
+
+	});
+
+	//id is a #tag.
+</script>
+</body>
+</html>
