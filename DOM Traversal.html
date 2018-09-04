@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="Jq/jquery-3.2.1.min.js"></script>
+	<title>JQuery test series</title>
+</head>
+<body>
+<div id="para">
+	<h3 class="text-primary">JQuery tutorial series</h3>
+	<p>This is all about DOM traversal in JQuery</p>
+</div>
+
+<div class="container">
+	<li>Car
+		<ul>
+			<li>Sedan</li>
+			<li>Station Wagon</li>
+			<li>Hatchback</li>
+			<li>Coupe</li>
+		</ul>
+	</li>
+	<li>Van</li>
+	<li>Bus</li>
+	<li>Motor Cycle</li>
+</div>
+<script>
+	$(document).ready(function(){
+	$('.btn').on('click', function(){
+		var columnID = $(this).attr('data-panel');
+		//console.log(columnID);
+		$('#'+columnID).html('This is '+columnID);
+	});
+
+	});
+
+	//id is a #tag.
+</script>
+</body>
+</html>
