@@ -18,5 +18,21 @@
 #container
 {
 	display: inline-block;
-	
+}
+
+
+/*Nav tab*/
+.tab-panels .tabs li{
+  display: inline;
+}
+
+.tab-panels .tabs .active{
+background-color: #ccc;
+}
+
+.tab-panels .panel{
+	display: none;
+}
+.tab-panels .panel-active{
+	display: block;
 }

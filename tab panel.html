@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="Jq/jquery-3.2.1.min.js"></script>
+	<title>JQuery test series</title>
+</head>
+<body>
+<div id="para">
+	<h3 class="text-primary">JQuery tutorial series</h3>
+	<p>How to create a nav panel in JQuery</p>
+</div>
+
+<div class="container">
+<div class="tab-panels">
+	<ul class="tabs">
+		<li rel="panel1" class="active">panel1</li>
+		<li rel="panel2">panel2</li>
+		<li rel="panel3">panel3</li>
+		<li rel="panel4">panel4</li>
+	</ul>
+
+	<div id="panel1" class="panel-active">
+		content1<br>
+		content1<br>
+		content1<br>
+		content1<br>
+		content1<br>
+	</div> 	
+	<div id="panel2" class="panel">
+		content2<br>
+		content2<br>
+		content2<br>
+		content2<br>
+		content2<br>
+	</div> 	
+	<div id="panel3" class="panel">
+		content3<br>
+		content3<br>
+		content3<br>
+		content3<br>
+		content3<br>
+	</div> 	
+	<div id="panel4" class="panel">
+		content4<br>
+		content4<br>
+		content4<br>
+		content4<br>
+		content4<br>
+	</div> 	
+</div>
+</div>
+<script>
+	$(document).ready(function(){
+
+	$('.tab-panels .tabs li').on('click', function () {
+
+		$('.tab-panels .tabs li.active').removeClass('active');
+		$(this).addClass('active');
+		var panel = $(this).attr('rel');
+		//console.log(panel);
+
+		$('.tab-panels .panel-active').slideUp(400, showNextPanel);
+		
+		function showNextPanel() {//Call back functions
+			$(this).removeClass('panel-active');
+
+				$('#'+panel).slideDown(500, function () {
+					$(this).addClass('panel-active');
+				});
+		}
+	});
+	});
+
+</script>
+</body>
+</html>
