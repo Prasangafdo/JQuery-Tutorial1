@@ -29,35 +29,47 @@
 		content1<br>
 	</div> 	
 	<div id="panel2" class="panel">
-		content3<br>
-		content3<br>
-		content1<br>
-		content1<br>
-		content1<br>
+		content2<br>
+		content2<br>
+		content2<br>
+		content2<br>
+		content2<br>
 	</div> 	
 	<div id="panel3" class="panel">
-		content4<br>
-		content4<br>
-		content4<br>
-		content4<br>
-		content4<br>
+		content3<br>
+		content3<br>
+		content3<br>
+		content3<br>
+		content3<br>
 	</div> 	
 	<div id="panel4" class="panel">
-		content5<br>
-		content5<br>
-		content1<br>
-		content1<br>
-		content1<br>
+		content4<br>
+		content4<br>
+		content4<br>
+		content4<br>
+		content4<br>
 	</div> 	
 </div>
 </div>
 <script>
 	$(document).ready(function(){
+
 	$('.tab-panels .tabs li').on('click', function () {
+
+		$('.tab-panels .tabs li.active').removeClass('active');
+		$(this).addClass('active');
 		var panel = $(this).attr('rel');
 		//console.log(panel);
-		$('.tab-panels .panel-active').slideUp(400);
 
+		$('.tab-panels .panel-active').slideUp(400, showNextPanel);
+		
+		function showNextPanel() {//Call back functions
+			$(this).removeClass('panel-active');
+
+				$('#'+panel).slideDown(500, function () {
+					$(this).addClass('panel-active');
+				});
+		}
 	});
 	});
 
